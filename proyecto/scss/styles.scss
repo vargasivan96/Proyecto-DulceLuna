@@ -1,0 +1,377 @@
+@import"body";
+@import"header";
+@import"main";
+@import"footer";
+@import"variables";
+@mixin equipo ($grid){
+    grid-area: $grid;
+    text-align: center;
+    .imgEquipo{
+        width: 100px;
+        height: 80px;
+        border: double;
+        &:hover{
+            transform: scale(1.02);
+        }
+    }
+}
+/*MEDIA QUERY*/
+@media only screen and (max-width: 768px){
+    body{
+        h1{
+            font-size: 20px;
+        }
+        .container{
+            width: 100%;
+            text-align: center;
+            .imgCarrusel{
+                width: 100%;
+                height: 300px;
+            }
+        }
+        .mainSection2{
+            background-color: #ECD0A8;
+            display: grid;
+            margin: 5px;
+            grid-template-columns: 1fr;
+            grid-template-rows:  1fr 2fr auto;
+            grid-template-areas:
+            "titulo"
+            "texto"
+            "video";
+            .mainSection2Titulo{
+                grid-area: titulo;
+                margin: auto;
+                text-align: center;
+                h2{
+                    font-size: 17px;
+                }
+            }
+            .mainSection2Texto{
+                grid-area: texto;
+                padding: 0px;
+                font-size: 12px;
+                line-height: 1rem;
+                margin: 0px;
+            }
+            .mainSection2Iframe{
+                grid-area: video;
+                text-align: center;
+                .videoSize{
+                    width: 250px;
+                    height: 120px;
+                }
+            }
+        }
+        .mainSection3{
+            .mainSection3Grid{
+                display: grid;
+                margin: 5px;
+                grid-template-columns: 1fr;
+                grid-template-rows: 7fr;
+                grid-template-areas:
+                "titulo"
+                "imagen1"
+                "texto1"
+                "imagen2"
+                "texto2"
+                "imagen3"
+                "texto3";
+                background-color: #D6B587;
+                .tituloGrid{
+                    grid-area: titulo;
+                    text-align: center;
+                    margin: 1rem;
+                    h2{
+                        font-size: 17px;
+                    }
+                }
+                .imgGrid1{
+                    @include equipo (imagen1)
+                }
+                .descripEquipo1{
+                    grid-area: texto1;
+                    width: 60%;
+                    text-align: center;
+                    font-size: 12px;
+                    h3{
+                        font-size: 16px;
+                    }
+                }
+                .imgGrid2{
+                    @include equipo (imagen2)
+                }
+                .descripEquipo2{
+                    grid-area: texto2;
+                    width: 60%;
+                    text-align: center;
+                    font-size: 12px;
+                    h3{
+                        font-size: 16px;
+                    }
+                }
+                .imgGrid3{
+                    @include equipo (imagen3)
+                }
+                .descripEquipo3{
+                    grid-area: texto3;
+                    width: 60%;
+                    text-align: center;
+                    font-size: 12px;
+                    h3{
+                        font-size: 16px;
+                    }
+                }
+            }
+        }
+        footer{
+            background-color: #705F47;
+            .footerGrid{
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows: auto;
+                color: #FFE4BE;
+                grid-template-areas:
+                "titulo logoubi imagen"
+                "contacto ubicacion"
+                "derechos derechos derechos";
+                .footerTitulo{
+                    grid-area: titulo;
+                    margin: 0px;
+                    h2{
+                        font-size: 17px;
+                        color: #FFE4BE;
+                    }
+                }
+                .logoUbi{
+                    grid-area: logoubi;
+                    text-align: center;
+                    margin-top: 30px;
+                }
+                .footerContact{
+                    grid-area: contacto;
+                    margin-left: 5px;
+                    margin-top: 0px;
+                    font-size: 12px;
+                }
+                .footerUbicacion{
+                    grid-area: ubicacion;
+                    text-align: center;
+                    font-size: 12px;
+                    padding: 0px;
+                }
+                .footerRedes{
+                    grid-area: derechos;
+                    text-align: start;
+                }
+                .footerDerechos{
+                    grid-area: derechos;
+                    text-align: center;
+                    font-size: 12px;
+                }
+            }
+        }
+        .flexboxPropuestas{ //MAIN CSS DE PROPUESTAS MEDIAQUERY
+            background-color: #D6B587;
+            h2{
+                font-size: 19px;
+            }
+            height: 70vh;
+            margin: 5px 5px 10px 5px;
+            text-align: center;
+            .mainPropuestas{
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: space-around;
+                margin: 15px;
+                .imgPropuesta{
+                    width: 120px;
+                    height: 70px;
+                    border: 2px double #705F47;
+                    opacity: .7;
+                    margin: 10px;
+                    &:hover{
+                        opacity: 1;
+                        border: solid 2px white;
+                        transform: scale(1.05);
+                    }
+                }
+            }
+        }
+        .main2{ //MAIN CSS DE CORPORATIVO MEDIAQUERY
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: 0.5fr 2fr 2fr;
+            height: 900px;
+            width: 100%;
+            margin: 0px;
+            margin-bottom: 10px;
+            margin-top: 10px;
+            grid-template-areas:
+            "rosa"
+            "rojo"
+            "rojo2";
+            gap: 2px;
+            .hijo{
+                border: solid 1px black;
+            }
+            .rosa{
+                background-color: #ECD0A8;
+                grid-area: rosa;
+                padding: 10px;
+            }
+            .amarillo{
+                grid-area: rojo2;
+                margin: 0px;
+                .imgCatering{
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+            .rojo{
+                background-color: #D6B587;
+                grid-area: rojo;
+                h2{
+                    font-size: 19px;
+                }
+                h3{
+                    font-size: 19px;
+                }
+                text-align: center;
+                padding-right: 0rem;
+                padding-left: 0rem;
+                padding-top: 0rem;
+                line-height: 1.5rem;
+                font-size: 12px;
+                .centTelef{
+                    padding-top: 2rem;
+                    font-size: 17px;
+                }
+            }
+        }
+        .formularioContacto{ //MAIN CSS DE CONTACTO MEDIAQUEDY
+            font-family: "Roboto",sans-serif;
+            width: 100%;
+            line-height: 1.5rem;
+            font-size: 12px;
+            padding: 0.5rem;
+            margin: 0px;
+            margin-top: 0px;
+            margin-bottom: 10px;
+            border: 0.5px solid black;
+            legend{
+                font-size: 10px;
+            }
+            .comentariosBox{
+                width: 100%;
+            }
+        }
+    }
+}
+@media only screen and (min-width: 769px) and (max-width: 1024px){
+    body{
+        .mainSection2{
+            background-color: #ECD0A8;
+            display: grid;
+            margin: 50px;
+            grid-template-columns: 1fr;
+            grid-template-rows:  1fr 2fr auto;
+            grid-template-areas:
+            "titulo"
+            "texto"
+            "video";
+            .mainSection2Titulo{
+                grid-area: titulo;
+                margin: auto;
+                text-align: center;
+                h2{
+                    font-size: 37px;
+                }
+            }
+            .mainSection2Texto{
+                grid-area: texto;
+                padding: 0px;
+                font-size: 20px;
+                line-height: 2rem;
+                margin: 10px;
+            }
+            .mainSection2Iframe{
+                grid-area: video;
+                text-align: center;
+                .videoSize{
+                    width: 500px;
+                    height: 300px;
+                }
+            }
+        }
+        .main2{ //MAIN CSS DE CORPORATIVO MEDIAQUERY
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: 0.5fr 2fr 2fr;
+            height: 100%;
+            width: 100%;
+            margin: 0px;
+            margin-bottom: 30px;
+            margin-top: 10px;
+            grid-template-areas:
+            "rosa"
+            "rojo"
+            "rojo2";
+            gap: 2px;
+            .hijo{
+                border: solid 1px black;
+            }
+            .rosa{
+                background-color: #ECD0A8;
+                grid-area: rosa;
+                padding: 10px;
+            }
+            .amarillo{
+                grid-area: rojo2;
+                margin: 0px;
+                .imgCatering{
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+            .rojo{
+                background-color: #D6B587;
+                grid-area: rojo;
+                h2{
+                    font-size: 35px;
+                }
+                h3{
+                    font-size: 35px;
+                }
+                text-align: center;
+                padding-right: 0rem;
+                padding-left: 0rem;
+                padding-top: 0rem;
+                line-height: 2rem;
+                font-size: 25px;
+                .centTelef{
+                    padding-top: 2rem;
+                    font-size: 35px;
+                }
+            }
+        }
+        .formularioContacto{ //MAIN CSS DE CONTACTO MEDIAQUEDY
+            font-family: "Roboto",sans-serif;
+            width: 100%;
+            line-height: 1.5rem;
+            font-size: 19px;
+            padding: 0.5rem;
+            margin: 0px;
+            margin-top: 0px;
+            margin-bottom: 10px;
+            border: 0.5px solid black;
+            legend{
+                font-size: 25px;
+            }
+            .comentariosBox{
+                width: 100%;
+            }
+        }
+    }
+}
